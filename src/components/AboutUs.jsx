@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import GroupPhoto from './images/Hero_GroupPhoto.JPG';
 
 const AboutUs = () => {
     return ( 
@@ -15,7 +16,7 @@ const AboutUs = () => {
                     </div>
                     <div className='aboutUsImg'>
                         <div className='imgWrap'>
-                        <img className='aboutUsImage' src='./images/Hero_GroupPhoto.JPG' alt='photo' />
+                        <img className='aboutUsImage' src={GroupPhoto} alt='photo' />
                         </div>
                     </div>
                 </div>
