@@ -13,6 +13,14 @@ const Home = () => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+<<<<<<< Updated upstream:src/pages/Home.jsx
+=======
+
+  const {city, country, temp, imageURL} = onApiData;
+  console.log(onApiData);
+  console.log(city);
+
+>>>>>>> Stashed changes:Client/src/pages/Home.jsx
   return (
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
