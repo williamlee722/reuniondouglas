@@ -5,15 +5,21 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SigninPage from './pages/SigninPage';
 
+var count = 0;
+
 function App() {
-  const [apiData,setApiData] = useState();
+  const [apiData,setApiData] = useState({});
 
   useEffect(() => {
     fetch("/api").then(
       response => response.json(),
     ).then(
-      data => setApiData(data),
-      console.log(apiData)
+      (data) => {setApiData(data);
+      console.log(data);
+      console.log(apiData);
+      count ++;
+      console.log(count);
+    }
     )
   },[])
 

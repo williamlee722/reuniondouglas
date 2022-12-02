@@ -7,13 +7,14 @@ import Blog from '../components/Blog';
 import ContactUs from '../components/ContactUs';
 import Footer from '../components/Footer';
 
-const Home = (onApiData) => {
+const Home = ({onApiData}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const {city, country, temp, imageURL} = onApiData.onApiData;
+  //const {ApiData} = onApiData;
+  const {city, country, temp, imageURL, description} = onApiData;
   console.log(onApiData);
   console.log(city);
 
