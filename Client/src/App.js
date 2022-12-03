@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SigninPage from './pages/SigninPage';
 
-var count = 0;
+var flag = 0;
 
 function App() {
   const [apiData,setApiData] = useState({});
@@ -17,11 +17,9 @@ function App() {
       (data) => {setApiData(data);
       console.log(data);
       console.log(apiData);
-      count ++;
-      console.log(count);
     }
     )
-  },[])
+  },[flag])
 
   return (
     <Router>
