@@ -408,6 +408,17 @@
   width: 240px;
 }
 
+.weatherApiBox{
+   background-color: #232a34;
+}
+
+.weatherApiBox td{
+  color: aliceblue;
+  padding: 1px;
+  text-align: center;
+  padding: 3px;
+}
+
 @media screen and (max-width: 1000px) {
   .blogWrapper {
     grid-template-columns: 1fr 1fr;
