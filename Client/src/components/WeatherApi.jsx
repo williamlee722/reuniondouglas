@@ -11,7 +11,7 @@ const WeatherApi = ({apiData}) => {
 
     return ( 
         <div style={{position: 'fixed', bottom: '0', right: '0'}}>
-            <table className='weatherApiBox' style={{width: '90px', height: '50px', padding: '5px', borderRadius: '10px'}}>
+            <table className='weatherApiBox' style={{width: '90px', height: '50px', padding: '5px', borderRadius: '10px', margin: '5px'}}>
                 <tbody>
                     <tr style={{height: '20px'}}>
                         <td rowSpan='2'> 
