@@ -1,0 +1,24 @@
+{
+  "name": "reuniondouglas",
+  "version": "1.0.0",
+  "description": "Reunion Douglas is a site for the Douglas College CSIS Class of 2023 students who are a part of the \"Reunion\" Group.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd server && npm start\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamlee722/reuniondouglas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williamlee722/reuniondouglas/issues"
+  },
+  "homepage": "https://github.com/williamlee722/reuniondouglas#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
