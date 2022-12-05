@@ -293,11 +293,7 @@
   top: 0;
   z-index: 0;
   overflow: hidden;
-  background: linear-gradient(
-    108deg,
-    rgba(1, 147, 86, 1) 0%,
-    rgba(10, 201, 122, 1) 100%
-  );
+  background: rgb(255, 166, 0)
 }
 
 .signinFormWrap{
@@ -324,7 +320,7 @@
 }
 
 .signinForm {
-  background: #010101;
+  background: white;
   max-width: 400px;
   height: auto;
   width: 100%;
@@ -338,16 +334,16 @@
 
 .signinFormH1 {
   margin-bottom: 40px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 400;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
   text-align: center;
 }
 
 .signinFormLabel {
   margin-bottom: 8px;
-  font-size: 14px;
-  color: #fff;
+  font-size: 20px;
+  color: black;
 }
 
 .signinFormInput {
@@ -358,20 +354,14 @@
 }
 
 .signinFormButton {
-  background: #01bf71;
+  background: rgb(255, 166, 0);
   padding: 16px 0;
   border: none;
   border-radius: 4px;
   color: #fff;
   font-size: 20px;
   cursor: pointer;
-}
-
-.signinFormText {
-  text-align: center;
-  margin-top: 24px;
-  color: #fff;
-  font-size: 14px;
+  font-weight: bold;
 }
 
 /* Footer css */
