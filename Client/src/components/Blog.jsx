@@ -4,7 +4,7 @@ import blogImg from './images/Hero_GroupPhoto.JPG';
 
 const Blog = () => {
   return (
-    <div className='blogContainer' id='services'>
+    <div className='blogContainer' id='blog'>
       <h1 className='blogH1'>Our Works</h1>
       <div className='blogWrapper'>
         <div className='blogCard'>

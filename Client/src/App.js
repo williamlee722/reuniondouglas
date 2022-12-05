@@ -27,7 +27,7 @@ function App() {
         <Route path='/' element={
         <Home onApiData= {apiData}/>
         }/>
-        <Route path='/signin' element={<SigninPage />}  />
+        <Route path='/admin' element={<SigninPage />}  />
       </Routes>
     </Router>
   );

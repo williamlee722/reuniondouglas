@@ -5,75 +5,6 @@
   font-family: 'Encode Sans Expanded', sans-serif;
 }
 
-/* Navbar css
-
-.navbarContainer {
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  z-index: 1;
-  width: 100%;
-  padding: 0 24px;
-  max-width: 1100px;
-}
-
-.navLogo {
-  color: #fff;
-  justify-self: flex-start;
-  cursor: pointer;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  margin-left: 24px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.mobileView {
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-}
-
-.navMenu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  text-align: center;
-  margin-right: -22px;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-
-.navItem {
-  height: 80px;
-}
-
-.linkItem {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-}
-
-.linkItem:active {
-  border-bottom: 3px solid #01bf71;
-} */
-
-
 /* Hero css */
 
 .heroContainer {
@@ -195,6 +126,7 @@
   line-height: 1.1;
   font-weight: 600;
   color: '#f7f8fa';
+  text-transform: uppercase;
 }
 
 .aboutUsP {
@@ -285,7 +217,7 @@
 
 .contactUsContainer {
   color: #fff;
-  background-color: '#f9f9f9';
+  background-color: #010606;
 }
 
 .contactUsWrapper {
@@ -302,30 +234,19 @@
 
 .contactUsInfo {
   display: grid;
-  grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
-  grid-template-areas: 'col2 col1';
+  grid-template-areas: 'col1';
 }
 
 .contactUsTxt{
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: col1;
-}
-
-.contactUsImg {
-  margin-bottom: 15px;
-  padding: 0 15px;
-  grid-area: col2;
-}
-
-.textWrapper {
-  max-width: 540px;
-  padding-top: 0;
-  padding-bottom: 60px;
+  text-align: center;
 }
 
 .contactUsH1 {
+  text-align: center;
   margin-bottom: 24px;
   font-size: 48px;
   line-height: 1.1;
@@ -334,24 +255,123 @@
 }
 
 .contactUsP {
-  max-width: 440px;
-  margin-bottom: 35px;
-  font-size: 18px;
-  line-height: 24px;
-  color: '#010606';
+  text-align: center;
 }
 
-.imgWrap {
-  max-width: 555px;
+.contactUsBtn {
+  margin-top: 30px;
+  border-radius: 50px;
+  background: #101522;
+  border: solid 1px white;
+  padding: 10px 30px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contactUsBtn:hover {
+  transition: all 0.2s ease-in-out;
+  background: white;
+  color: #101522;
+}
+
+.contactUsBtn:visited {
+  text-decoration: none;
+}
+
+/* SigninPage css */
+
+.signinContainer {
+  min-height: 692px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(
+    108deg,
+    rgba(1, 147, 86, 1) 0%,
+    rgba(10, 201, 122, 1) 100%
+  );
+}
+
+.signinFormWrap{
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.contactUsImage {
+.signinIcon {
+  margin-left: 32px;
+  margin-top: 32px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.signinFormContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signinForm {
+  background: #010101;
+  max-width: 400px;
+  height: auto;
   width: 100%;
-  margin-top: 0;
-  margin-right: 0;
-  margin-left: 10px;
-  padding-right: 0;
+  z-index: 1;
+  display: grid;
+  margin: 0 auto;
+  padding: 80px 32px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.signinFormH1 {
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.signinFormLabel {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.signinFormInput {
+  padding: 16px 16px;
+  margin-bottom: 32px;
+  border: none;
+  border-radius: 4px;
+}
+
+.signinFormButton {
+  background: #01bf71;
+  padding: 16px 0;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.signinFormText {
+  text-align: center;
+  margin-top: 24px;
+  color: #fff;
+  font-size: 14px;
 }
 
 /* Footer css */
@@ -407,6 +427,34 @@
   align-items: center;
   width: 240px;
 }
+
+.adminBtn {
+  border-radius: 50px;
+  background: #101522;
+  border: solid 1px white;
+  padding: 10px 30px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.adminBtn:hover {
+  transition: all 0.2s ease-in-out;
+  background: white;
+  color: #101522;
+}
+
+.adminBtn:visited {
+  text-decoration: none;
+}
+
+/* weather API css */
 
 .weatherApiBox{
    background-color: #232a34;
@@ -481,6 +529,10 @@
 
   .contactUsH1 {
     font-size: 32px;
+  }
+
+  .signinFormWrap {
+    height: 80%;
   }
 }
 
