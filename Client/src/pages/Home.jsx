@@ -8,7 +8,7 @@ import ContactUs from '../components/ContactUs';
 import Footer from '../components/Footer';
 import WeatherApi from '../components/WeatherApi';
 
-const Home = ({onApiData}) => {
+const Home = ({onApiData, blogs}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -20,7 +20,7 @@ const Home = ({onApiData}) => {
       <Navbar toggle={toggle} />
       <Hero />
       <AboutUs />
-      <Blog />
+      <Blog blogs={blogs}/>
       <ContactUs />
       <Footer />
       <WeatherApi apiData = {onApiData}/>
