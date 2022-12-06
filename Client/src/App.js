@@ -1,3 +1,11 @@
+/* 
+Title : CSIS 3380 - 001 Final Project
+App Name : Reunion Douglas Group Website
+Author : Berke Ozten, William Lee
+
+PLEASE CHECK THE README.md FILE FOR INSTRUCTIONS TO USE THE APP!
+*/
+
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -7,6 +15,8 @@ import { AuthContextProvider } from './AuthContext';
 import BlogList from './pages/BlogList';
 import ProtectedRoute from './ProtectedRoute';
 import axios from "axios";
+import CreateBlog from './pages/CreateBlog';
+import EditBlog from './pages/EditBlog';
 
 function App() {
 
@@ -80,6 +90,8 @@ function App() {
           }/>
           <Route path='/admin' element={<SigninPage />}  />
           <Route path='/blog' element={<ProtectedRoute> <BlogList onAdd={handleAdd} onDelete={handleDelete} onUpdate={handleUpdate} blogs={blogs}/> </ProtectedRoute> }  />
+          <Route path='/create' element={<ProtectedRoute> <CreateBlog onAdd={handleAdd} blogs={blogs}/> </ProtectedRoute> }  />
+          <Route path='/edit' element={<ProtectedRoute> <EditBlog onUpdate={handleUpdate} blogs={blogs}/> </ProtectedRoute> }  />
         </Routes>
       </AuthContextProvider>
     </Router>
