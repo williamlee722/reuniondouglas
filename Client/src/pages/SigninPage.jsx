@@ -1,37 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-
-import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from '../firebase';
+import React, {useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserAuth } from '../AuthContext';
 
 const SigninPage = () => {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const { signin } = UserAuth();
 
-  onAuthStateChanged(auth, (currentUser) => {
-
-  })
-
-  const login = () => {
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      alert("logged in");
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage);
-    });
-  }
-
-  const logout = async () =>{
-    await signOut(auth);
-    alert('logged out');
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    setError('')
+    try{
+      await signin(email, password)
+      console.log("success")
+      navigate('/blog')
+    } catch (e) {
+      setError(e.message)
+      alert(e.message)
+    }
   }
 
   return (
@@ -39,14 +28,13 @@ const SigninPage = () => {
       <div className='signinFormWrap'>
         <Link className='signinIcon' to='/'>ReunionDouglas</Link>
         <div className='signinFormContent'>
-          <form className='signinForm' action='/admin'>
+          <form className='signinForm' onSubmit={handleSubmit}>
             <h1 className='signinFormH1'>Sign in to your account</h1>
             <label className='signinFormLabel' htmlFor='for'>Email</label>
-            <input className='signinFormInput' type={"email"} required onChange={(event) => setEmail(event.target.value)}/><br/>
+            <input className='signinFormInput' type={"email"} required onChange={(e) => setEmail(e.target.value)}/><br/>
             <label className='signinFormLabel' htmlFor='for'>Password</label>
-            <input className='signinFormInput' type={"password"} required onChange={(event) => setPassword(event.target.value)}/><br/>
-            <button className='signinFormButton' onClick={login}>Login</button><br/>
-            <button className='signinFormButton' onClick={logout}>LogOut</button><br/>
+            <input className='signinFormInput' type={"password"} required onChange={(e) => setPassword(e.target.value)}/><br/>
+            <button className='signinFormButton'>Login</button><br/>
           </form>
         </div>
       </div>

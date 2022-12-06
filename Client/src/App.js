@@ -3,6 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SigninPage from './pages/SigninPage';
+import { AuthContextProvider } from './AuthContext';
+import BlogList from './pages/BlogList';
+import ProtectedRoute from './ProtectedRoute';
 
 var flag = 0;
 
@@ -23,12 +26,15 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        <Route path='/' element={
-        <Home onApiData= {apiData}/>
-        }/>
-        <Route path='/admin' element={<SigninPage />}  />
-      </Routes>
+      <AuthContextProvider>
+        <Routes>
+          <Route path='/' element={
+          <Home onApiData= {apiData}/>
+          }/>
+          <Route path='/admin' element={<SigninPage />}  />
+          <Route path='/blog' element={<ProtectedRoute> <BlogList /> </ProtectedRoute> }  />
+        </Routes>
+      </AuthContextProvider>
     </Router>
   );
 }
