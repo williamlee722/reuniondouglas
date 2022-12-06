@@ -94,6 +94,7 @@ app.get("/api/bloginfo", async (req, res) => {
   
  //CREATE OPERATION
 app.post("/api/bloginfo", async (req, res) => {
+  console.log("Server side: ")
     try {
       console.log(req);
       //process request body
@@ -193,6 +194,6 @@ app.post("/api/bloginfo", async (req, res) => {
   });
 
 app.listen(5000, () => {
-    console.log("The serves is up and running on port 5000");
+    console.log("The server is up and running on port 5000");
 })
 

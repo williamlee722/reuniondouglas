@@ -62,13 +62,20 @@ function App() {
     console.log("Add blog handled");
     console.log(title, author, headerImage, text)
     const url = `http://localhost:5000/api/bloginfo`;
-    const {data} = await axios.post(url, {
-      title, 
-      author, 
-      headerImage, 
-      text
+    const data = {
+      "title": title, 
+      "author": author, 
+      "headerImage": headerImage, 
+      "text": text
+    };
+
+    const addBlog = await axios.post(url, data, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
     });
-    console.log(data);
+
+    console.log(addBlog);
     if (typeof data == "object") {
       const newBlogs = [...blogs, data];
       setBlogs(newBlogs);
