@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../AuthContext';
 
-export default function BlogList({blogs}) {
+export default function BlogList({blogs, onDelete = f=>f}) {
     const {logout} = UserAuth();
   return (
     <div>
@@ -18,20 +18,16 @@ export default function BlogList({blogs}) {
         </thead>
         <tbody>
             {blogs.map((blog, index) => (
-              <tr>
-              <td>{blog.title}</td>
-              <td>{blog.text.substring(0,30) + "..."}</td>
-              <td>{blog.author}</td>
-              <td><Link to='/edit'>Edit</Link></td>
-              <td><button id="deleteBlog">Delete</button></td>
+              <tr key={blog._id}>
+                <td>{blog.title}</td>
+                <td>{blog.text.substring(0,30) + "..."}</td>
+                <td>{blog.author}</td>
+                <td><Link to={`/edit/${blog._id}`}>Edit</Link></td>
+                <td><button onClick={()=>onDelete(blog)}>Delete</button></td>
               </tr>
             ))}
           </tbody>
       </table>
-
-
-
-
         <br/><br/><br/>
         <Link to='/create'>Create New</Link>
         <br/><br/><br/>

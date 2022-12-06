@@ -84,9 +84,34 @@ function App() {
     }
   };
 
-  const handleUpdate=()=>{
-    console.log("update")
-  }
+  const handleUpdate=async (id, title, author, headerImage, text) => {
+    console.log("Update blog handled");
+    console.log(id, title, author, headerImage, text);
+    const url = `http://localhost:5000/api/bloginfo/${id}`;
+    const data = {
+      "id": id,
+      "title": title, 
+      "author": author, 
+      "headerImage": headerImage, 
+      "text": text
+    };
+
+    const updateBlog = await axios.put(url, data, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
+
+    await axios
+      .get("http://localhost:5000/api/bloginfo")
+      .then((res) => {
+        console.log(res, res.data);
+        setBlogs(res.data);
+      })
+      .catch((err) => {
+        console.log("ERROR: ", err);
+      });
+  };
 
   return (
     <Router>
@@ -98,7 +123,7 @@ function App() {
           <Route path='/admin' element={<SigninPage />}  />
           <Route path='/blog' element={<ProtectedRoute> <BlogList onDelete={handleDelete} blogs={blogs}/> </ProtectedRoute> }  />
           <Route path='/create' element={<ProtectedRoute> <CreateBlog onAdd={handleAdd}/> </ProtectedRoute> }  />
-          <Route path='/edit' element={<ProtectedRoute> <EditBlog onUpdate={handleUpdate}/> </ProtectedRoute> }  />
+          <Route path='/edit/:id' element={<ProtectedRoute> <EditBlog onUpdate={handleUpdate} blogs={blogs}/> </ProtectedRoute> }  />
         </Routes>
       </AuthContextProvider>
     </Router>
