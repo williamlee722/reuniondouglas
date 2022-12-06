@@ -18,7 +18,7 @@ const Blog = ({blogs}) => {
             {blog.author}
           </p>
           <p className='blogP'>
-            {blog.text}
+            {blog.text.substring(0,50) + "..."}
           </p>
         </div>
         ))}

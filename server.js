@@ -95,6 +95,7 @@ app.get("/api/bloginfo", async (req, res) => {
  //CREATE OPERATION
 app.post("/api/bloginfo", async (req, res) => {
     try {
+      console.log(req);
       //process request body
       const { title, author, headerImage, text } = req.body;
       console.log(title, author, headerImage, text);

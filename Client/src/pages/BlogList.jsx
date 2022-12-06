@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../AuthContext';
 
-export default function BlogList() {
+export default function BlogList({blogs}) {
     const {logout} = UserAuth();
   return (
     <div>
@@ -17,13 +17,15 @@ export default function BlogList() {
           </tr>
         </thead>
         <tbody>
-            <tr>
-            <td>Title</td>
-            <td>Details<p>10 strings</p></td>
-            <td>Author</td>
-            <td><Link to='/edit'>Edit</Link></td>
-            <td><button id="deleteBlog">Delete</button></td>
-            </tr>
+            {blogs.map((blog, index) => (
+              <tr>
+              <td>{blog.title}</td>
+              <td>{blog.text.substring(0,30) + "..."}</td>
+              <td>{blog.author}</td>
+              <td><Link to='/edit'>Edit</Link></td>
+              <td><button id="deleteBlog">Delete</button></td>
+              </tr>
+            ))}
           </tbody>
       </table>
 

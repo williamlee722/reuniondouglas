@@ -62,7 +62,7 @@ function App() {
     console.log("Add blog handled");
     console.log(title, author, headerImage, text)
     const url = `http://localhost:5000/api/bloginfo`;
-    const { data } = await axios.post(url, {
+    const {data} = await axios.post(url, {
       title, 
       author, 
       headerImage, 
@@ -89,9 +89,9 @@ function App() {
           <Home onApiData= {apiData} blogs={blogs}/>
           }/>
           <Route path='/admin' element={<SigninPage />}  />
-          <Route path='/blog' element={<ProtectedRoute> <BlogList onAdd={handleAdd} onDelete={handleDelete} onUpdate={handleUpdate} blogs={blogs}/> </ProtectedRoute> }  />
-          <Route path='/create' element={<ProtectedRoute> <CreateBlog onAdd={handleAdd} blogs={blogs}/> </ProtectedRoute> }  />
-          <Route path='/edit' element={<ProtectedRoute> <EditBlog onUpdate={handleUpdate} blogs={blogs}/> </ProtectedRoute> }  />
+          <Route path='/blog' element={<ProtectedRoute> <BlogList onDelete={handleDelete} blogs={blogs}/> </ProtectedRoute> }  />
+          <Route path='/create' element={<ProtectedRoute> <CreateBlog onAdd={handleAdd}/> </ProtectedRoute> }  />
+          <Route path='/edit' element={<ProtectedRoute> <EditBlog onUpdate={handleUpdate}/> </ProtectedRoute> }  />
         </Routes>
       </AuthContextProvider>
     </Router>
