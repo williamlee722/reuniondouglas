@@ -165,11 +165,12 @@
   display: grid;
   grid-gap: 16px;
   padding: 16px;
-  grid-template-columns: repeat(auto-fill,minmax(350px,350px));
+  grid-template-columns: repeat(1fr);
   grid-auto-flow: column;
-  grid-auto-columns: minmax(160px,350px);
+  grid-auto-columns: 350px;
   overflow-x: auto;
   align-items: center;
+  width: 90vw;
 }
 
 .blogCard {
@@ -747,11 +748,41 @@ th {
 
 /* weather API css */
 
-.weatherApiBox{
-   background-color: #232a34;
+.weatherApi {
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
-.weatherApiBox td{
+.weatherApiBox{
+  background-color: #232a34;
+  width: 90px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.weatherIcon {
+  height: 20px;
+}
+
+.weatherdegrees {
+  background-color: #232a34;
+  height: 40px;
+}
+
+.weatherApicity{
+  font-size: 14px;
+  color: aliceblue;
+  padding: 1px;
+  text-align: center;
+  padding: 3px;
+}
+
+.weatherApitemp{
+  background-color: #232a34;
+  font-size: 18px;
   color: aliceblue;
   padding: 1px;
   text-align: center;
