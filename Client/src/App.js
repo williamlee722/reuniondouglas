@@ -17,6 +17,7 @@ import ProtectedRoute from './ProtectedRoute';
 import axios from "axios";
 import CreateBlog from './pages/CreateBlog';
 import EditBlog from './pages/EditBlog';
+import BlogModal from './components/BlogModal';
 
 function App() {
 
@@ -120,6 +121,7 @@ function App() {
           <Route path='/' element={
           <Home onApiData= {apiData} blogs={blogs}/>
           }/>
+          <Route path='/blogModal/:id' element={<BlogModal blogs={blogs} />} />
           <Route path='/admin' element={<SigninPage />}  />
           <Route path='/blog' element={<ProtectedRoute> <BlogList onDelete={handleDelete} blogs={blogs}/> </ProtectedRoute> }  />
           <Route path='/create' element={<ProtectedRoute> <CreateBlog onAdd={handleAdd}/> </ProtectedRoute> }  />
