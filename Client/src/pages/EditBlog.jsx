@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useParams} from 'react-router-dom';
-import { UserAuth } from '../AuthContext';
+import { UserAuth } from '../firebase/AuthContext';
 
 export default function EditBlog({blogs, onUpdate=f=>f}) {
   const {logout} = UserAuth();

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { UserAuth } from '../AuthContext';
+import { UserAuth } from '../firebase/AuthContext';
 
 export default function BlogList({blogs, onDelete = f=>f}) {
     const {logout} = UserAuth();

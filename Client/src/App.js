@@ -11,7 +11,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SigninPage from './pages/SigninPage';
-import { AuthContextProvider } from './AuthContext';
+import { AuthContextProvider } from './firebase/AuthContext';
 import BlogList from './pages/BlogList';
 import ProtectedRoute from './ProtectedRoute';
 import axios from "axios";
