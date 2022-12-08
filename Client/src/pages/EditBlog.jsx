@@ -36,7 +36,7 @@ export default function EditBlog({blogs, onUpdate=f=>f}) {
     <div>
       <div className='createBlogContainer'>
         <div className='createBlogFormWrap'>
-          <Link className='createBlogIcon' to='/'>ReunionDouglas</Link>
+          <Link className='createBlogIcon' to='/' onClick={logout}>ReunionDouglas</Link>
           <div className='createBlogFormContent'>
             <form className='createBlogForm' onSubmit={submit}>
               <h1 className='createBlogFormH1'>Create New Blog</h1>

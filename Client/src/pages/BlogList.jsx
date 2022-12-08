@@ -7,7 +7,7 @@ export default function BlogList({blogs, onDelete = f=>f}) {
   return (
     <div className='blogListContainer'>
       <div className='blogListTableWrap'>
-        <Link className='createBlogIcon' to='/'>ReunionDouglas</Link>
+        <Link className='createBlogIcon' to='/' onClick={logout}>ReunionDouglas</Link>
         <div className='blogListTableContent'>
           <div className='blogListTableContainer'>
             <h1 className='blogListTableH1'>Blogs</h1>
